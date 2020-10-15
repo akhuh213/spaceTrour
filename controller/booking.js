@@ -13,10 +13,10 @@ router.get('/', (req, res) => {
     console.log(items)
     res.render('booking', {items})
     })
-    // .catch(err=>{
-    //     console.log(err)
-    //     res.status.apply(503).send({message: 'Database asleep?'})
-    // })
+    .catch(err=>{
+        console.log(err)
+        res.status.apply(503).send({message: 'Database asleep?'})
+    })
 })
 
 router.post("/", (req,res) => 

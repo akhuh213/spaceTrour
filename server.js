@@ -1,15 +1,24 @@
 const express = require('express'); 
 const app = express();
+const router = express.Router();
+
+const controller = require('./controller/ctrl')
 
 
+// Set Engine
+app.set('view engine', 'ejs');
+
+app.use(express.urlencoded({extended: false}));
+app.use(express.static(`${__dirname}/public`));
+
+
+//Routers
 
 app.get('/', (req, res) => {
-    res.send('<h1>Space<h1>')
-})
+    res.render('home.ejs');
+});
 
-app.get('/space', (req, res) => {
-    res.send('<h1>Space Page<h1>')
-})
+
 
 app.get('/', (req, res) => {
     res.send('<h1>Space<h1>')

@@ -5,18 +5,18 @@ const { response } = require('express');
 
 const db = require("../models");
 
-router.get('/', (req, res) => {
-    db.User.find()
-        .then(foundUser => {
-            // console.log(foundPost)
-            res.send(foundUser)
-        })
-        .catch(err=>{
-            console.log(err)
-            res.status.apply(503).send({message: 'Database asleep?'})
-        })
-    res.render('booking')
+// booking page 
 
+router.get('/', (req, res) => {
+    db.Item.find()
+    .then((items) => {
+    console.log(items)
+    res.render('booking', {items})
+    })
+    // .catch(err=>{
+    //     console.log(err)
+    //     res.status.apply(503).send({message: 'Database asleep?'})
+    // })
 })
 
 router.post("/", (req,res) => 
@@ -40,16 +40,33 @@ router.post("/", (req,res) =>
 // suit page 
 router.get('/suit', (req, res) => {
     res.render('suit')
-
 })
 
+//dining page
 router.get('/dining', (req, res) => {
-    res.render('dining')
+    db.Item.find( { category: 'diet' })
+    .then((items) => {
+    console.log(items)
+    res.render('cabin', {items})
+    })
+    .catch(err=>{
+    console.log(err)
+    res.status.apply(503).send({message: 'Database asleep?'})
+    })
 
 })
 
+// cabin page 
 router.get('/cabin', (req, res) => {
-    res.render('cabin')
+    db.Item.find( { category: 'cabin' })
+    .then((items) => {
+    console.log(items)
+    res.render('cabin', {items})
+    })
+    .catch(err=>{
+    console.log(err)
+    res.status.apply(503).send({message: 'Database asleep?'})
+    })
 
 })
 module.exports = router;

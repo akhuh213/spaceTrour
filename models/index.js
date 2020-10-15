@@ -14,9 +14,7 @@ mongoose.connect(MONGO_URI,
 //mongoose connection object
 const db = mongoose.connection;
 
-mongoose.connect(connectionString, configOptions)    
-    .then(() => console.log('MongoDB successfully connected...'))    
-    .catch((err) => console.log(`MongoDB connection error: ${err}`));
+
 
 //set up an event listener to fire once when the connections "opens"
 //console log what hose and port it's running on

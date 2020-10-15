@@ -8,11 +8,14 @@ const ItemSchema = new Schema(
     {
         type: String
     },
-    name:
+    imgUrl:
     {
         type: String
     },
-
+    category:
+    {
+        type: String
+    }
 });
 
 module.exports = Item = mongoose.model("Item", ItemSchema);

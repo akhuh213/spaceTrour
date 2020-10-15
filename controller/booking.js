@@ -1,6 +1,9 @@
+require("dotenv").config();
 const express = require('express');
 const router = express.Router();
 const { response } = require('express');
+
+const db = require("../models");
 
 router.get('/', (req, res) => {
     db.User.find()
@@ -15,6 +18,7 @@ router.get('/', (req, res) => {
     res.render('booking')
 
 })
+
 router.post("/", (req,res) => 
 {   
     db.User.create(req.body)

@@ -2,9 +2,12 @@
 const express = require('express'); 
 const app = express();
 
+
 const router = express.Router();
 // const controller = require('./controller/booking')
 
+
+app.use(express.json());
 
 // Set Engine
 app.set('view engine', 'ejs');
@@ -21,8 +24,6 @@ app.get('/', (req, res) => {
 });
 
 
-
-
 app.get('/', (req, res) => {
     res.send('<h1>Space<h1>')
 })
@@ -32,6 +33,7 @@ app.get('/', (req, res) => {
 
 app.use('/mars', require('./controller/mars'));
 app.use('/booking', require('./controller/booking'));
+
 
 
 app.listen(3000, ()=>{

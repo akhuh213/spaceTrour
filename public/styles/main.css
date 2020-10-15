@@ -1,3 +1,28 @@
-body {
-    background-color: brown;
+.nav-link {
+    text-align: center;
 }
+
+/* Remove borader line from nave bar */
+.navbar-light,
+.navbar-toggler {
+    border-color: rgb(235, 228, 228);
+}
+
+
+/* Make background image  */
+img { 
+    max-width: 100%; 
+    height: auto; }
+
+
+/* Image to nav */
+
+/* .navbar,
+.navbar-expand-lg,
+.navbar-light,
+.sticky-navigation {
+    background-image: url("../images/MainBG.png");
+    max-width: 100%; 
+    
+
+} */

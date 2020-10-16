@@ -17,6 +17,18 @@ router.get('/', (req, res) => {
     res.status.apply(503).send({message: 'Database asleep?'})
     })
 })
+
+router.get('/departureOne', (req, res) => {
+    res.render('departureOne')
+})
+
+router.get('/departureTwo', (req, res) => {
+    res.render('departureTwo')
+})
+router.get('/departureThree', (req, res) => {
+    res.render('departureThree')
+})
+
 // suit page 
 // router.get('/suit', (req, res) => {
 //     db.Item.find( { category: 'suit' })

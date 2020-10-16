@@ -4,14 +4,43 @@
     <%- include('./Partials/_head') %>
 </head>
 <body>
-    <h1>Choose your dietary! </h1>
+    <h1>MEAL PLANS </h1>
 
-    <%= user%>
 
-<form action="/booking/diet/<%= user %>/edit?_method=PUT" method="post">
-    <input type="text" name="diet" id="diet" value="vegan">
-    <button type="submit" class="waves-effect waves-light btn">Confirm diet</button>
-    </form> 
+    <div class="card" style="width: 20rem;">
+        <img id="card-image" src="../images/SubOrbital.png" class="card-img-top" alt="Card image cap" style="height:190px;">
+        <div class="card-body">
+            <h5 class="card-title">PLANT BASED</h5>
+            <p class="card-text"></p>
+            <a href="#" class="btn btn-primary">Learn More</a>
+            <form action="/booking/diet/<%= user %>/edit?_method=PUT" method="post">
+                <input hidden type="text" name="diet" id="diet" value="vegan">
+                <button class="btn btn-primary" type="submit" class="waves-effect waves-light btn">SELECT</button>
+        </form> 
+    </div>
+    <div class="card" style="width: 20rem;">
+        <img id="card-image" src="../images/SubOrbital.png" class="card-img-top" alt="Card image cap" style="height:190px;">
+        <div class="card-body">
+            <h5 class="card-title">VARIETY</h5>
+            <p class="card-text"> Food for everyone</p>
+            <a href="#" class="btn btn-primary">Learn More</a>
+            <form action="/booking/diet/<%= user %>/edit?_method=PUT" method="post">
+                <input hidden type="text" name="diet" id="diet" value="vegan">
+                <button class="btn btn-primary" type="submit" class="waves-effect waves-light btn">SELECT</button>
+        </form> 
+    </div>
+    <div class="card" style="width: 20rem;">
+        <img id="card-image" src="../images/SubOrbital.png" class="card-img-top" alt="Card image cap" style="height:190px;">
+        <div class="card-body">
+            <h5 class="card-title">Gluten Free</h5>
+            <p class="card-text">For your health!</p>
+            <a href="#" class="btn btn-primary">Learn More</a>
+            <form action="/booking/diet/<%= user %>/edit?_method=PUT" method="post">
+                <input hidden type="text" name="diet" id="diet" value="vegan">
+                <button class="btn btn-primary" type="submit" class="waves-effect waves-light btn">SELECT</button>
+        </form> 
+    </div>
+
 </body>
 </html>
 </body>

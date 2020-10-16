@@ -63,13 +63,17 @@ button {
 .card {
     margin: 0 auto;
     float: none;
-    margin-top: 20px;
+    margin-bottom: 20px;
     text-align: left;
     border-top-left-radius: calc(.5rem + 2px);
     border-top-right-radius: calc(.5rem + 2px);
     border: none;
     /* padding-bottom: 2px; */
 
+}
+
+.dual-btn-card .card-footer {
+    padding: 0;
 }
 
 .card-img, 
@@ -102,8 +106,22 @@ form {
     color: white !important;
 }
 
-.btn {
-    color: white;
+.btn-card-primary {
+    background-color: #7549FE;
+    color: #FCFBFE;
+    width: 50%;
+    border: none;
+    border-radius: 0;
+    border-bottom-right-radius: .25rem;
+}
+
+.btn-card-secondary {
+    background-color: #FCFBFE;
+    color: #7549FE;
+    width: 50%;
+    border: none;
+    border-radius: 0;
+    border-bottom-left-radius: .25rem;
 }
 
 #suitimage {

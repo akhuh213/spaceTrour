@@ -8,39 +8,53 @@
     <h1>MEAL PLANS </h1>
 
 
-    <div class="card" style="width: 20rem;">
-        <img id="card-image" src="../images/SubOrbital.png" class="card-img-top" alt="Card image cap" style="height:190px;">
+    <div class="dual-btn-card card " style="width: 20rem;">
+        <img id="card-image" src="../../../images/dinning3.png" class="card-img-top" alt="Card image cap" style="height:190px;">
         <div class="card-body">
             <h5 class="card-title">PLANT BASED</h5>
             <p class="card-text"></p>
-            <a href="#" class="btn btn-primary">Learn More</a>
+        </div> 
+
+        <div class="card-footer">
             <form action="/booking/diet/<%= user %>/edit?_method=PUT" method="post">
-                <input hidden type="text" name="diet" id="diet" value="vegan">
-                <button class="btn btn-primary" type="submit" class="waves-effect waves-light btn">SELECT</button>
-        </form> 
+                <input hidden type="text" name="diet" id="diet" value="VEGAN">
+                <a href="#" class="btn btn-primary btn-card-secondary">Learn More</a><button class="btn btn-primary btn-card-primary" type="submit" class="waves-effect waves-light btn">SELECT</button>
+            </form>
+        </div>
     </div>
-    <div class="card" style="width: 20rem;">
-        <img id="card-image" src="../images/SubOrbital.png" class="card-img-top" alt="Card image cap" style="height:190px;">
+
+    <div class="dual-btn-card card" style="width: 20rem;">
+        <img id="card-image" src="../../../images/dinning1.png" class="card-img-top" alt="Card image cap" style="height:190px;">
         <div class="card-body">
             <h5 class="card-title">VARIETY</h5>
-            <p class="card-text"> Food for everyone</p>
-            <a href="#" class="btn btn-primary">Learn More</a>
+            <!-- <p class="card-text"> Food for everyone</p> -->
+        </div>
+
+        <div class="card-footer">
             <form action="/booking/diet/<%= user %>/edit?_method=PUT" method="post">
-                <input hidden type="text" name="diet" id="diet" value="vegan">
-                <button class="btn btn-primary" type="submit" class="waves-effect waves-light btn">SELECT</button>
-        </form> 
+                <input hidden type="text" name="diet" id="diet" value="VARIETY">
+                <a href="#" class="btn btn-primary btn-card-secondary">Learn More</a><button class="btn btn-primary btn-card-primary" type="submit" class="waves-effect waves-light btn">SELECT</button>
+            </form>
+        </div>
     </div>
-    <div class="card" style="width: 20rem;">
-        <img id="card-image" src="../images/SubOrbital.png" class="card-img-top" alt="Card image cap" style="height:190px;">
+
+    <div class="dual-btn-card card" style="width: 20rem;">
+        <img id="card-image" src="../../../images/dinning2.png" class="card-img-top" alt="Card image cap" style="height:190px;">
         <div class="card-body">
-            <h5 class="card-title">Gluten Free</h5>
-            <p class="card-text">For your health!</p>
-            <a href="#" class="btn btn-primary">Learn More</a>
+            <h5 class="card-title">GLUTEN FREE</h5>
+            <!-- <p class="card-text">For your health!</p> -->
+        </div>
+        <div>
             <form action="/booking/diet/<%= user %>/edit?_method=PUT" method="post">
-                <input hidden type="text" name="diet" id="diet" value="vegan">
-                <button class="btn btn-primary" type="submit" class="waves-effect waves-light btn">SELECT</button>
-        </form> 
+                <input hidden type="text" name="diet" id="diet" value="GLUTEN FREE">
+                <a href="#" class="btn btn-primary btn-card-secondary">Learn More</a><button class="btn btn-primary btn-card-primary" type="submit" class="waves-effect waves-light btn">SELECT</button>
+            </form> 
+        </div>
     </div>
+    <div>
+            <p>Alice Colby Sabantu</p>
+    </div>
+
 
 </body>
 </html>

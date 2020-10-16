@@ -1,4 +1,5 @@
 body {
+    font-family: 'Oswald', sans-serif;
     background-color: #031926;
     background-image: url("../images/MainBG.png") !important;
     max-width: 100vh; 
@@ -8,8 +9,12 @@ body {
     background-repeat: repeat-y;
     background-size: 100%;
     text-align: center;
-    /* color: white */
+    color: #f8f9fa;
+
     
+}
+h1 {
+    color: #ffff !important;
 }
 
 .navbar-brand {
@@ -78,23 +83,33 @@ button {
     border-top-right-radius: calc(.5rem + 2px);
 }
 
-h1,
-h2,
-h6 {
-    text-align: center;
+
+H4 {
     color: #f8f9fa;
 }
-
-
-H3,
-H4,
-H5 {
+p {
     color: #031926;
 }
 
-/* #card-image {
+.card-title {
+    color: #031926 !important;
+    font-weight: bold;
+}
 
-} */
+
+/* Aligh Booking  */
+.departure {
+    text-align: left;
+    margin-left: 20px;
+
+}
+.departure2 {
+    text-align: left;
+    margin-left: 80px;
+    color: #7649FE;
+    padding: 10;
+}
+
 
 .col-md-4{ margin: 20px auto; } 
 
@@ -102,9 +117,22 @@ form {
     color: white !important;
 }
 
+
+/* Format Buttons */
 .btn {
     color: white;
+    background-color: #7649FE;
+    
 }
+
+#learn {
+    color: #7649FE;
+    background-color: white;
+}
+
+
+
+
 
 #suitimage {
     width: 30px;

@@ -109,18 +109,24 @@ form {
 .btn-card-primary {
     background-color: #7549FE;
     color: #FCFBFE;
-    width: 50%;
     border: none;
     border-radius: 0;
-    border-bottom-right-radius: .25rem;
 }
 
 .btn-card-secondary {
     background-color: #FCFBFE;
     color: #7549FE;
-    width: 50%;
     border: none;
     border-radius: 0;
+}
+
+.dual-btn-card .btn-card-primary {
+    width: 50%;
+    border-bottom-right-radius: .25rem;
+}
+
+.dual-btn-card .btn-card-secondary {
+    width: 50%;
     border-bottom-left-radius: .25rem;
 }
 

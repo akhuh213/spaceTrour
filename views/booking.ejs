@@ -5,21 +5,17 @@
 </head>
 <body>
     <h1>FROM EARTH TO MARS</h1>
-    <h2>Chose your Departure</h2>
+    <h2>Chose Departure</h2>
     <h5>Departures</h5>
 
-
-    <% if(items) { %>
-        <% items.forEach (e => { %>
-        
-        <%= e.time %><br>
-
-        <form action="/booking/suit" method="post" class="form">
-            <input hidden type="text" name="flightSchedule" id="flightSchedule" value="<%= e.time %>">
-            <button type="submit" class="waves-effect waves-light btn">Confirm Departure</button>
-            </form> 
-        <% })} %>
     
+    <a href="/booking/departureOne"> <h4>16 Oct 2120 12:35PM</h4> </a><br>
+    <a href="/booking/departureTwo"> <h4>17 Nov, 2120 3:45PM</h4> </a><br>    
+    <a href="/booking/departureThree"> <h4>14 Dec, 2120 4:20PM</h4> </a><br>  
+    
+
+
+
 
 
 

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./Partials/_head') %>
+</head>
+<body>
+    <h1>FROM EARTH TO MARS</h1>
+    <h2>Prepare for Takeoff</h2>
+    <h5>Departures</h5>
+        14 Dec 2120 4:20PM
+    <h5>Arrival</h5>
+        30 May, 2121 12:35PM
+    <h5>Distance</h5>
+        39.866 million mi
+    
+    <form action="/booking/suit" method="post" class="form">
+        <input hidden type="text" name="flightSchedule" id="flightSchedule" value="16 Oct 2120, 12:35PM">
+        <button type="submit" class="waves-effect waves-light btn">Confirm Departure</button>
+        </form> 
+
+
+</body>
+</html>

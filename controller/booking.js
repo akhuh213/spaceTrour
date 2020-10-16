@@ -17,6 +17,18 @@ router.get('/', (req, res) => {
     res.status.apply(503).send({message: 'Database asleep?'})
     })
 })
+
+router.get('/departureOne', (req, res) => {
+    res.render('departureOne')
+})
+
+router.get('/departureTwo', (req, res) => {
+    res.render('departureTwo')
+})
+router.get('/departureThree', (req, res) => {
+    res.render('departureThree')
+})
+
 // suit page 
 // router.get('/suit', (req, res) => {
 //     db.Item.find( { category: 'suit' })
@@ -58,7 +70,46 @@ router.put('/:id/edit', (req,res)=>
         new: true
     })
     .then(updatedUser => {
-        res.render('cabin', {updatedUser})
+        res.render('cabin', {"user":updatedUser._id})
+        console.log(updatedUser)
+    })
+    .catch(err => {
+        console.log(err)
+        res.status(503).send({message: 'server error'})
+    })
+})
+
+router.put('/cabin/:id/edit', (req,res)=>
+{
+    db.User.findOneAndUpdate({
+        _id:req.params.id
+    },
+    req.body,
+    {
+        new: true
+    })
+    .then(updatedUser => {
+        res.render('dining', {"user":updatedUser._id})
+        console.log(updatedUser)
+    })
+    .catch(err => {
+        console.log(err)
+        res.status(503).send({message: 'server error'})
+    })
+})
+
+
+router.put('/diet/:id/edit', (req,res)=>
+{
+    db.User.findOneAndUpdate({
+        _id:req.params.id
+    },
+    req.body,
+    {
+        new: true
+    })
+    .then(updatedUser => {
+        res.render('confirm', {updatedUser})
         console.log(updatedUser)
     })
     .catch(err => {

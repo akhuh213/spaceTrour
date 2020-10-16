@@ -22,16 +22,16 @@ const UserSchema = new Schema(
 
     },
     cabin:
-    [{
-        type: Schema.ObjectId,
-        ref: "Item"
-    }],
+    {
+        type: String,
+        default: "yes"
+    },
     //an array of posts passed by the reference to id
     diet: 
-    [{
-        type: Schema.ObjectId,
-        ref: "Item"
-    }],
+    {
+        type: String,
+        default: "yes"
+    },
     //an array of comments passed by the reference to id
     flightSchedule:
     [{

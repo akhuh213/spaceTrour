@@ -7,7 +7,16 @@
     <h1> book your travel</h1>
 
 
+    <% if(items) { %>
+        <% items.forEach (e => { %>
+        
+        <%= e.time %><br>
 
+        <form action="/booking/confirm" method="post">
+            <input hidden type="text" name="flightSchedule" id="flightSchedule" value="<%= e.time %>">
+            <button type="submit" class="waves-effect waves-light btn">Confirm Departure</button>
+            </form> 
+        <% })} %>
     
 
 

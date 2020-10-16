@@ -8,23 +8,23 @@ const db = require("../models");
 // booking page 
 
 router.get('/', (req, res) => {
-    db.User.find()
+    db.Item.find( { category: 'departure' })
     .then((items) => {
     console.log(items)
     res.render('booking', {items})
     })
     .catch(err=>{
-        console.log(err)
-        res.status.apply(503).send({message: 'Database asleep?'})
+    console.log(err)
+    res.status.apply(503).send({message: 'Database asleep?'})
     })
 })
 
-router.post("/", (req,res) => 
+router.post("/confirm", (req,res) => 
 {   
     db.User.create(req.body)
     .then(createdUser => {
         // console.log(createdPost)
-        res.status(201).send(createdUser)
+        res.render('suit', {'user':createdUser})
     })
     .catch(err => {
         console.log('Error while creating new post', err)

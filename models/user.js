@@ -7,7 +7,7 @@ const UserSchema = new Schema(
     name:
     {
         type: String,
-        required: true
+        required: false
     },
     suite:
     [{
@@ -28,8 +28,8 @@ const UserSchema = new Schema(
     //an array of comments passed by the reference to id
     flightSchedule:
     [{
-        type: Schema.ObjectId,
-        ref: "Item"
+        type: String,
+        required: true
     }],
     date:
     {

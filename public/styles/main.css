@@ -1,8 +1,23 @@
 body {
     background-color: #031926;
-    background-image: url("MainBG.png");
+    background-image: url("../images/MainBG.png") !important;
+    max-width: 100vh; 
+    height: auto; 
+    background-color: #031926;
+    background-attachment: fixed;
     background-repeat: repeat-y;
+    background-size: 100%;
+    
 }
+
+.navbar-brand {
+    font-family: 'Orbitron', sans-serif;
+    color: #ffff !important;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 .nav-link {
     text-align: center;
 }
@@ -11,29 +26,21 @@ body {
 .navbar-light,
 .navbar-toggler{
     border-color: rgb(235, 228, 228);
-    background-color: #031926;
+
 }
 
+/* .navbar-light, */
 .navbar-toggler-icon {
-    color: white;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
 }
+
 
 button {
     background-color: white;
 }
 
-/* Make background image  */
-img { 
-    max-width: 100%; 
-    height: auto; 
-    background-color: #031926;
-    background-attachment: fixed;
-    background-repeat: repeat-y;
-}
 
-.background-image {
-    background-color: #000000;
-}
+
 
 
 .navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
@@ -49,7 +56,42 @@ img {
     }
 
 /* DISCOVERY */
+/* Change the edges of the card  */
 
 .card {
-    align-items: center;
+    margin: 0 auto;
+    float: none;
+    margin-top: 20px;
+    text-align: left;
+    border-top-left-radius: calc(.5rem + 2px);
+    border-top-right-radius: calc(.5rem + 2px);
+    border: none;
+    /* padding-bottom: 2px; */
+
 }
+
+.card-img, 
+.card-img-top {
+    border-top-left-radius: calc(.5rem + 2px);
+    border-top-right-radius: calc(.5rem + 2px);
+}
+
+h1,
+h2,
+h6 {
+    text-align: center;
+    color: #f8f9fa;
+}
+
+
+H3,
+H4,
+H5 {
+    color: #031926;
+}
+
+/* #card-image {
+
+} */
+
+.col-md-4{ margin: 20px auto; } 

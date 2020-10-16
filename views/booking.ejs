@@ -4,7 +4,9 @@
     <%- include('./Partials/_head') %>
 </head>
 <body>
-    <h1> book your travel</h1>
+    <h1>FROM EARTH TO MARS</h1>
+    <h2>Chose your Departure</h2>
+    <h5>Departures</h5>
 
 
     <% if(items) { %>
@@ -12,7 +14,7 @@
         
         <%= e.time %><br>
 
-        <form action="/booking/suit" method="post">
+        <form action="/booking/suit" method="post" class="form">
             <input hidden type="text" name="flightSchedule" id="flightSchedule" value="<%= e.time %>">
             <button type="submit" class="waves-effect waves-light btn">Confirm Departure</button>
             </form> 

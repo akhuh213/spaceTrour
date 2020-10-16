@@ -4,9 +4,11 @@
     <%- include('./Partials/_head') %>
 </head>
 <body>
+<body>
 
   <h1> <%= userId %></h1> 
     <h1>choose your suit! </h1>
+    
 
     <form action="/booking/<%= userId %>/edit?_method=PUT" method="post">
         <input type="text" name="suitesize" id="suitesize" value="M">

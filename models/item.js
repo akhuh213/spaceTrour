@@ -15,6 +15,14 @@ const ItemSchema = new Schema(
     category:
     {
         type: String
+    },
+    size:
+    {
+        type: String
+    },
+    time:
+    {
+        type: String
     }
 });
 

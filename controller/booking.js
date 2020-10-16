@@ -10,7 +10,6 @@ const db = require("../models");
 router.get('/', (req, res) => {
     db.Item.find( { category: 'departure' })
     .then((items) => {
-    console.log(items)
     res.render('booking', {items})
     })
     .catch(err=>{
@@ -18,13 +17,26 @@ router.get('/', (req, res) => {
     res.status.apply(503).send({message: 'Database asleep?'})
     })
 })
+// suit page 
+// router.get('/suit', (req, res) => {
+//     db.Item.find( { category: 'suit' })
+//     .then((items) => {
+//     console.log(items)
+//     res.render('suit', {items})
+//     })
+//     .catch(err=>{
+//     console.log(err)
+//     res.status.apply(503).send({message: 'Database asleep?'})
+//     })
+// })
 
-router.post("/confirm", (req,res) => 
+router.post('/suit', (req,res) => 
 {   
     db.User.create(req.body)
     .then(createdUser => {
-        // console.log(createdPost)
-        res.render('suit', {'user':createdUser})
+        console.log(createdUser)
+        res.render('suit', {'userId':createdUser._id})
+        console.log(createdUser._id)
     })
     .catch(err => {
         console.log('Error while creating new post', err)
@@ -36,44 +48,18 @@ router.post("/confirm", (req,res) =>
     })
 })
 
-router.get('/discovery', (req, res) => {
-    res.render('discovery')
-})
-
-// suit page 
-router.get('/suit', (req, res) => {
-    res.render('suit')
-})
-
-
-router.get('/:id', (req,res) =>
+router.put('/:id/edit', (req,res)=>
 {
-    db.Post.findById(req.params('id'))
-    .then(foundPost => {
-        if(foundPost){
-            res.send(foundPost)
-        }else{
-            res.status(404).send({message: 'Resource not located'})
-        }
-    })
-    .catch(err => {
-        console.log(err)
-        res.status(503).send({message: 'Service Unavailable'})
-    })
-})
-
-
-router.put('/:id', (req,res)=>{
     db.User.findOneAndUpdate({
-        '_id':req.params.id
+        _id:req.params.id
     },
     req.body,
     {
         new: true
     })
-    .then(element => {
-        res.send(element)
-        console.log(element)
+    .then(updatedUser => {
+        res.render('cabin', {updatedUser})
+        console.log(updatedUser)
     })
     .catch(err => {
         console.log(err)
@@ -81,12 +67,54 @@ router.put('/:id', (req,res)=>{
     })
 })
 
+
+router.get('/discovery', (req, res) => {
+    res.render('discovery')
+})
+
+
+
+// router.get('/:id', (req,res) =>
+// {
+//     db.Post.findById(req.params('id'))
+//     .then(foundPost => {
+//         if(foundPost){
+//             res.send(foundPost)
+//         }else{
+//             res.status(404).send({message: 'Resource not located'})
+//         }
+//     })
+//     .catch(err => {
+//         console.log(err)
+//         res.status(503).send({message: 'Service Unavailable'})
+//     })
+// })
+
+
+// router.put('/:id', (req,res)=>{
+//     db.User.findOneAndUpdate({
+//         '_id':req.params.id
+//     },
+//     req.body,
+//     {
+//         new: true
+//     })
+//     .then(element => {
+//         res.send(element)
+//         console.log(element)
+//     })
+//     .catch(err => {
+//         console.log(err)
+//         res.status(503).send({message: 'server error'})
+//     })
+// })
+
 //dining page
 router.get('/dining', (req, res) => {
     db.Item.find( { category: 'diet' })
     .then((items) => {
     console.log(items)
-    res.render('cabin', {items})
+    res.render('dining', {items})
     })
     .catch(err=>{
     console.log(err)

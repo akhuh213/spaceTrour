@@ -16,14 +16,10 @@ const ItemSchema = new Schema(
     {
         type: String
     },
-    size:
-    {
-        type: String
-    },
     time:
     {
         type: String
-    }
+    },
 });
 
 module.exports = Item = mongoose.model("Item", ItemSchema);

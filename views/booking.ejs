@@ -12,7 +12,7 @@
         
         <%= e.time %><br>
 
-        <form action="/booking/confirm" method="post">
+        <form action="/booking/suit" method="post">
             <input hidden type="text" name="flightSchedule" id="flightSchedule" value="<%= e.time %>">
             <button type="submit" class="waves-effect waves-light btn">Confirm Departure</button>
             </form> 

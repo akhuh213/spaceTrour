@@ -9,11 +9,18 @@ const UserSchema = new Schema(
         type: String,
         required: false
     },
-    suite:
-    [{
-        type: Schema.ObjectId,
-        ref: "Item"
-    }],
+    suitesize:
+    {
+        type: String,
+        default: "yes"
+ 
+    },
+    suitecolor:
+    {
+        type: String,
+        default: "yes"
+
+    },
     cabin:
     [{
         type: Schema.ObjectId,

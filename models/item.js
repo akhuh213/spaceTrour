@@ -15,7 +15,11 @@ const ItemSchema = new Schema(
     category:
     {
         type: String
-    }
+    },
+    time:
+    {
+        type: String
+    },
 });
 
 module.exports = Item = mongoose.model("Item", ItemSchema);

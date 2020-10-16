@@ -4,6 +4,19 @@
     <%- include('./Partials/_head') %>
 </head>
 <body>
+<body>
+
+  <h1> <%= userId %></h1> 
     <h1>choose your suit! </h1>
+    
+
+    <form action="/booking/<%= userId %>/edit?_method=PUT" method="post">
+        <input type="text" name="suitesize" id="suitesize" value="M">
+        <input type="text" name="suitecolor" id="suitecolor" value="red">
+        <button type="submit" class="waves-effect waves-light btn">Confirm Suit</button>
+        </form> 
+
 </body>
 </html>
+
+

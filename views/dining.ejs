@@ -5,5 +5,14 @@
 </head>
 <body>
     <h1>Choose your dietary! </h1>
+
+    <%= user%>
+
+<form action="/booking/diet/<%= user %>/edit?_method=PUT" method="post">
+    <input type="text" name="diet" id="diet" value="vegan">
+    <button type="submit" class="waves-effect waves-light btn">Confirm diet</button>
+    </form> 
+</body>
+</html>
 </body>
 </html>

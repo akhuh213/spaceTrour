@@ -5,7 +5,11 @@
 </head>
 <body>
     <h1>CABIN</h1>
+<%= user%>
 
-
+<form action="/booking/cabin/<%= user %>/edit?_method=PUT" method="post">
+    <input type="text" name="cabin" id="cabin" value="Single">
+    <button type="submit" class="waves-effect waves-light btn">Confirm Suit</button>
+    </form> 
 </body>
 </html>

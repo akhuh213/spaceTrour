@@ -8,7 +8,7 @@ const db = require("../models");
 // booking page 
 
 router.get('/', (req, res) => {
-    db.Item.find()
+    db.User.find()
     .then((items) => {
     console.log(items)
     res.render('booking', {items})
@@ -36,10 +36,49 @@ router.post("/", (req,res) =>
     })
 })
 
+router.get('/discovery', (req, res) => {
+    res.render('discovery')
+})
 
 // suit page 
 router.get('/suit', (req, res) => {
     res.render('suit')
+})
+
+
+router.get('/:id', (req,res) =>
+{
+    db.Post.findById(req.params('id'))
+    .then(foundPost => {
+        if(foundPost){
+            res.send(foundPost)
+        }else{
+            res.status(404).send({message: 'Resource not located'})
+        }
+    })
+    .catch(err => {
+        console.log(err)
+        res.status(503).send({message: 'Service Unavailable'})
+    })
+})
+
+
+router.put('/:id', (req,res)=>{
+    db.User.findOneAndUpdate({
+        '_id':req.params.id
+    },
+    req.body,
+    {
+        new: true
+    })
+    .then(element => {
+        res.send(element)
+        console.log(element)
+    })
+    .catch(err => {
+        console.log(err)
+        res.status(503).send({message: 'server error'})
+    })
 })
 
 //dining page
@@ -69,4 +108,6 @@ router.get('/cabin', (req, res) => {
     })
 
 })
+
+
 module.exports = router;

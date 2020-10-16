@@ -17,8 +17,6 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({extended: false}));
 app.use(express.static(`${__dirname}/public`));
 
-// Trial 
-app.set("views", "path/to/views")
 
 app.use(methodOverride('_method'))
 //Routers
